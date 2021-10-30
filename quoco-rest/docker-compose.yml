@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  broker:
+    build: broker
+    environment:
+      AF: auldfellas:8081
+      DD: dodgydrivers:8082
+      GP: girlpower:8083
+    ports:
+      - 8080:8080
+    depends_on:
+      - auldfellas
+      - dodgydrivers
+      - girlpower
+  girlpower:
+    build: girlpower
+  dodgydrivers:
+    build: dodgydrivers
+  auldfellas:
+    build: auldfellas
